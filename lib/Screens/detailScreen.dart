@@ -34,19 +34,10 @@ class NoteDetail extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(12.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            // mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // Center(
-              //     child: Text(
-              //   'Full Details',
-              //   style: TextStyle(
-              //       color: Colors.indigo,
-              //       fontSize: MediaQuery_page.font27, //27
-              //       fontWeight: FontWeight.bold),
-              // )),
+            crossAxisAlignment: CrossAxisAlignment.start,          
+            children: [              
               SizedBox(
-                height: MediaQuery_page.height12,//12
+                height: MediaQuery_page.height12,
               ),
               
               Center(
@@ -54,30 +45,30 @@ class NoteDetail extends StatelessWidget {
                     ? Image.file(
                         File(note.imagePath!),
                         width: double.infinity,
-                        height: MediaQuery_page.height200,//200
+                        height: MediaQuery_page.height200,
                       )
                     : const Text(""),
               ),
                SizedBox(
-                height: MediaQuery_page.height12,//12
+                height: MediaQuery_page.height12,
               ),
               Center(
                 child: Text(
                   '${note.title}',
                   style:  TextStyle(
-                    fontSize: MediaQuery_page.font25,//25
+                    fontSize: MediaQuery_page.font25,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
                SizedBox(
-                height: MediaQuery_page.height12,//12
+                height: MediaQuery_page.height12,
               ),
               Center(
                 child: Text(
                   '${note.description}',
                   style:  TextStyle(
-                    fontSize: MediaQuery_page.font18,//18
+                    fontSize: MediaQuery_page.font18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

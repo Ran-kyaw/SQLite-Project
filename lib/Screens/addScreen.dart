@@ -31,7 +31,6 @@ class _AddScreenState extends State<AddScreen> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     titleController.dispose();
     descriptionController.dispose();
     super.dispose();
@@ -42,20 +41,19 @@ class _AddScreenState extends State<AddScreen> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: AppColors.appbarcolor,
-          
+
           leading: const BackButton(color: Colors.white),
-          toolbarHeight: MediaQuery_page.height54,//54
-          shape:  RoundedRectangleBorder(
+          toolbarHeight: MediaQuery_page.height54, //54
+          shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
-              bottomRight: Radius.circular(MediaQuery_page.width27),//27
+              bottomRight: Radius.circular(MediaQuery_page.width27), //27
             ),
           ),
-          
+
           title: const Text(
             'Notes App',
             style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
-          
         ),
 
         // body
@@ -81,27 +79,27 @@ class _AddScreenState extends State<AddScreen> {
                   ),
                 ],
               ),
-              
               if (_image != null)
                 Container(
-                  padding:  EdgeInsets.all(MediaQuery_page.height10),//10
+                  padding: EdgeInsets.all(MediaQuery_page.height10),
                   width: MediaQuery_page.screenWidth,
-                  height:MediaQuery_page.height260,
+                  height: MediaQuery_page.height260,
                   child: Stack(
                     children: [
                       Container(
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(MediaQuery_page.height20),//20
+                            borderRadius:
+                                BorderRadius.circular(MediaQuery_page.height20),
                             image: DecorationImage(
                                 image: FileImage(_image!), fit: BoxFit.cover)),
                       ),
                       Align(
                         alignment: Alignment.bottomRight,
                         child: Padding(
-                          padding:  EdgeInsets.all(MediaQuery_page.height12),//12
+                          padding: EdgeInsets.all(MediaQuery_page.height12),
                           child: Container(
-                            height: MediaQuery_page.height30,//30
-                            width: MediaQuery_page.width30,//30
+                            height: MediaQuery_page.height30,
+                            width: MediaQuery_page.width30,
                             decoration: const BoxDecoration(
                                 shape: BoxShape.circle, color: Colors.white),
                             child: InkWell(
@@ -111,10 +109,9 @@ class _AddScreenState extends State<AddScreen> {
                                 });
                               },
                               child: Icon(
-                                
                                 Icons.delete,
                                 color: AppColors.deletebtncolor,
-                                size: MediaQuery_page.height16,//16
+                                size: MediaQuery_page.height16,
                               ),
                             ),
                           ),
@@ -124,37 +121,39 @@ class _AddScreenState extends State<AddScreen> {
                   ),
                 ),
               Padding(
-                padding:  EdgeInsets.all(MediaQuery_page.height8),//8
+                padding: EdgeInsets.all(MediaQuery_page.height8),
                 child: TextField(
                   controller: titleController,
                   maxLines: null,
                   textCapitalization: TextCapitalization.sentences,
-                  style:  TextStyle(
-                    fontSize:MediaQuery_page.font23,//23
+                  style: TextStyle(
+                    fontSize: MediaQuery_page.font23,
                     fontWeight: FontWeight.w900,
                   ),
                   decoration: InputDecoration(
                     hintText: 'Enter Note Title',
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(MediaQuery_page.width5)),//5
+                        borderRadius:
+                            BorderRadius.circular(MediaQuery_page.width5)),
                     errorText:
                         validateTitle ? 'Title Value Can\'t Be Empty !' : null,
                   ),
                 ),
               ),
               Padding(
-                padding:  EdgeInsets.all(MediaQuery_page.height8),//8
+                padding: EdgeInsets.all(MediaQuery_page.height8),
                 child: TextField(
                   controller: descriptionController,
                   maxLines: 7,
-                  style:  TextStyle(
-                    fontSize: MediaQuery_page.font20,//20
+                  style: TextStyle(
+                    fontSize: MediaQuery_page.font20,
                     fontWeight: FontWeight.w900,
                   ),
                   decoration: InputDecoration(
                     hintText: 'Enter Something...',
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(MediaQuery_page.width5)),//5
+                        borderRadius:
+                            BorderRadius.circular(MediaQuery_page.width5)),
                     errorText: validateDescription
                         ? 'Description Value Can\'t Be Empty !'
                         : null,
@@ -190,8 +189,7 @@ class _AddScreenState extends State<AddScreen> {
               Navigator.pop(context, result);
             }
           },
-           label: mybuttom("Save Notes"),
-        
+          label: mybuttom("Save Notes"),
           backgroundColor: AppColors.buttomcolor,
         ));
   }
